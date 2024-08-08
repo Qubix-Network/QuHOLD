@@ -24,47 +24,9 @@ npm install quhold
 
 Then, import the necessary functions and create your state management effortlessly!
 
-## API Documentation
-
-### `Hold<T>`
-
-A class that holds a value of type T and allows subscribers to listen for changes to that value.
-
-**Constructor**
-
-```typescript
-new Hold<T>(initialValue: T)
-```
-
-`initialValue (T)` The initial value of the state.
-
-**Methods**
-
-- `getValue(): T` Returns the current value of the state.
-- `setValue(newValue: T): void` Sets a new value to the state and notifies all subscribers if the new value is different from the current value.
-- `subscribe(subscriber: Subscriber<T>): () => void` Adds a subscriber function that will be called whenever the state changes. Returns a function to unsubscribe the subscriber.
-
-### `createHold<T>(initialValue: T): Hold<T>`
-
-A factory function to create a new Hold instance.
-
-- `initialValue (T)`: The initial value of the state.
-- Returns a `Hold<T>` instance.
-
-### `useHold<T>(hold: Hold<T>): [T, (newValue: T) => void]`
-
-A custom hook to use a Hold instance in a React component.
-
-- `hold (Hold<T>)`: The Hold instance to be used.
-
-**Returns a tuple:**
-
-- The current value of the state.
-- A function to set a new value to the state.
-
 ## Usage Example
 
-## Basic State Management
+### Basic State Management
 
 ```javascript
 import React from "react";
@@ -171,6 +133,44 @@ export default App;
 
 - The `Hold` class uses a set to manage subscribers, ensuring that each subscriber is unique.
 - The `useHold` hook handles the subscription and cleanup automatically, making it easy to integrate with React components.
+
+## API Documentation
+
+### `Hold<T>`
+
+A class that holds a value of type T and allows subscribers to listen for changes to that value.
+
+**Constructor**
+
+```typescript
+new Hold<T>(initialValue: T)
+```
+
+`initialValue (T)` The initial value of the state.
+
+**Methods**
+
+- `getValue(): T` Returns the current value of the state.
+- `setValue(newValue: T): void` Sets a new value to the state and notifies all subscribers if the new value is different from the current value.
+- `subscribe(subscriber: Subscriber<T>): () => void` Adds a subscriber function that will be called whenever the state changes. Returns a function to unsubscribe the subscriber.
+
+### `createHold<T>(initialValue: T): Hold<T>`
+
+A factory function to create a new Hold instance.
+
+- `initialValue (T)`: The initial value of the state.
+- Returns a `Hold<T>` instance.
+
+### `useHold<T>(hold: Hold<T>): [T, (newValue: T) => void]`
+
+A custom hook to use a Hold instance in a React component.
+
+- `hold (Hold<T>)`: The Hold instance to be used.
+
+**Returns a tuple:**
+
+- The current value of the state.
+- A function to set a new value to the state.
 
 ## Contributing
 
