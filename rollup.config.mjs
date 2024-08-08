@@ -19,11 +19,12 @@ export default [
         format: "esm",
       },
     ],
-    plugins: [resolve(), commonjs(), typescript({ tsconfig: "./tsconfig.json" }), terser()],
+    plugins: [resolve(), commonjs({ include: "node_modules/**" }), typescript({ tsconfig: "./tsconfig.json" }), terser()],
   },
   {
     input: "dist/esm/types/index.d.ts",
     output: [{ file: "dist/index.d.ts", format: "esm" }],
+    external: ["react", "react-dom"],
     plugins: [dts()],
   },
 ];
