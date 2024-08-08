@@ -1,0 +1,44 @@
+{
+  "name": "quhold",
+  "version": "1.0.0",
+  "keywords": [
+    "quhold",
+    "value container",
+    "data storage",
+    "data management",
+    "state management",
+    "value keeper",
+    "state holding"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Qubix-Network/QuHold.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.3",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.3",
+    "@rollup/plugin-typescript": "^11.1.2",
+    "@types/react": "^18.2.20",
+    "rollup": "^3.28.0",
+    "rollup-plugin-dts": "^5.3.1",
+    "tslib": "^2.6.1",
+    "typescript": "^5.1.6"
+  },
+  "author": "Qubix Network",
+  "license": "MIT",
+  "description": "QuHOLD is a simple state container library for React applications, providing an easy way to manage and synchronize state across components.",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist/",
+    "LICENSE"
+  ],
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "react": "^18.3.1"
+  }
+}
